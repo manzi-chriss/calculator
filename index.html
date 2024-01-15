@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Include Tailwind CSS with Tokyo Night theme -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Apply Tokyo Night theme */
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/lib/index.js');
+
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/css/preflight.css');
+
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/css/components.css');
+
+        @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/css/utilities.css');
+
+        /* Additional styles for a playful and interactive design */
+        body {
+            background: linear-gradient(to right, #ffffff, #1a2026);
+        }
+
+        .container {
+            max-width: 16rem;
+        }
+
+        .rounded {
+            border-radius: 1rem;
+        }
+
+        .input-field,
+        .button {
+            border: 2px solid #ffffff;
+            padding: 1rem;
+            font-size: 0.875rem;
+            background-color: #1a2026;
+            color: #ffffff;
+            border-radius: 1rem;
+        }
+
+        .button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+    <div class="bg-tokyonight-dark p-4 rounded-lg shadow-md text-tokyonight-light container">
+        <h1 class="text-2xl font-semibold mb-4">🔐 Login</h1>
+
+        <form id="loginForm">
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium">Password:</label>
+                <input type="password" id="password" name="password" class="input-field rounded w-full">
+            </div>
+
+            <button type="button" onclick="validatePassword()" class="bg-tokyonight-accent text-tokyonight-light button rounded-lg hover:bg-tokyonight-accent-dark">
+                ➡️ Login to Calculator
+            </button>
+        </form>
+
+        <p id="errorMessage" class="text-red-500 mt-2"></p>
+
+        <script>
+            function validatePassword() {
+                var enteredPassword = document.getElementById('password').value;
+                var correctPassword = 'prince';
+
+                if (enteredPassword === correctPassword) {
+                    window.location.href = 'todo.html';
+                } else {
+                    document.getElementById('errorMessage').innerText = 'Incorrect password. Please enter the correct password.';
+                }
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
